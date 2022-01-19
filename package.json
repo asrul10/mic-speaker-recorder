@@ -1,6 +1,6 @@
 {
   "name": "mic-speaker-recorder",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Mic and/or Speaker Recorder",
   "main": "micSpeakerRecorder.js",
   "scripts": {
