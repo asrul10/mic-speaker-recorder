@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <title>Mic and/or Speaker Recorder</title>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h2>Mic and/or Speaker Recorder</h2>
+        <div class="mb-2">
+            <button id="btn-start-recording" class="s-rounded btn btn-primary">Start Recording</button>
+            <button id="btn-stop-recording" class="s-rounded btn btn-error" disabled>Stop Recording</button>
+        </div>
+        <audio class="mt-2" controls></audio>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.js"
+        integrity="sha512-HNbo1d4BaJjXh+/e6q4enTyezg5wiXvY3p/9Vzb20NIvkJghZxhzaXeffbdJuuZSxFhJP87ORPadwmU9aN3wSA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/MicSpeakerRecorder.bundle.min.js"></script>
+    <script>
+        const $audio = $('audio');
+        const $startRecording = $('#btn-start-recording');
+        const $stopRecording = $('#btn-stop-recording');
+        const $title = $('h1');
+
+        const config = {
+            speaker: true,
+            mic: true
+        }
+        const micSpeakerRecorder = new MicSpeakerRecorder(config, function () {
+            $startRecording.attr('disabled', true);
+            $stopRecording.attr('disabled', false);
+            console.log("Recording callback here!");
+        }, function (blobData) {
+            $startRecording.attr('disabled', false);
+            $stopRecording.attr('disabled', true);
+            $audio.attr('src', URL.createObjectURL(blobData));
+            console.log("Stop recording callback here!");
+        }, function () {
+            $startRecording.attr('disabled', false);
+            $stopRecording.attr('disabled', true);
+            console.log("Error callback here!");
+        });
+
+        $startRecording.on('click', () => {
+            micSpeakerRecorder.start();
+        });
+
+        $stopRecording.on('click', () => {
+            micSpeakerRecorder.stop();
+        });
+    </script>
+</body>
+
+</html>

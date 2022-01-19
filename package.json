@@ -1,0 +1,40 @@
+{
+  "name": "mic-speaker-recorder",
+  "version": "0.0.1",
+  "description": "Mic and/or Speaker Recorder",
+  "main": "micSpeakerRecorder.js",
+  "scripts": {
+    "build": "gulp"
+  },
+  "keywords": [
+    "mic recorder",
+    "speaker recorder",
+    "audio recorder",
+    "recordrtc",
+    "webrtc",
+    "mic and speaker recorder"
+  ],
+  "author": {
+    "name": "asrul10",
+    "email": "hanafi.asrul@kotaxdev.com",
+    "url": "https://github.com/asrul10"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/asrul10/mic-speaker-recorder/issues",
+    "email": "hanafi.asrul@kotaxdev.com"
+  },
+  "dependencies": {
+    "multistreamsmixer": "^1.2.2",
+    "recordrtc": "^5.6.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.8",
+    "babel-preset-minify": "^0.5.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "webpack-stream": "^7.0.0"
+  }
+}
