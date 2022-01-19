@@ -6,15 +6,15 @@ JavaScript Library for Mic and/or Speaker Recorder
 
 Using NPM Pakacge:
 
-```bash
-npm i micSpeakerRecorder
+```
+npm i mic-speaker-recorder
 ```
 
 ```JS
 import MicSpeakerRecorder from "micSpeakerRecorder";
 ```
 
-Or using bundle file, download [MicSpeakerRecorder.bundle.min.js](https://github.com/asrul10/mic-speaker-recorder/MicSpeakerRecorder.bundle.min.js) file and include to your pages.
+Or using bundle file, download [MicSpeakerRecorder.bundle.min.js](https://github.com/asrul10/mic-speaker-recorder/blob/main/MicSpeakerRecorder.bundle.min.js) file and include to your pages.
 
 ```html
 <script src="MicSpeakerRecorder.bundle.min.js"></script>
@@ -23,12 +23,11 @@ Or using bundle file, download [MicSpeakerRecorder.bundle.min.js](https://github
 ## # Usage
 
 ```JS
-const config = {
-  speaker: true,
-  mic: true,
-};
 const micSpeakerRecorder = new MicSpeakerRecorder(
-  config,
+  {
+    speaker: true, // enable recording speaker
+    mic: true, // enable recording mic
+  },
   function () {
     // Recording callback here!
   },
@@ -49,7 +48,7 @@ micSpeakerRecorder.stop();
 
 ## # Example
 
-Full example [example/index.html](https://github.com/asrul10/mic-speaker-recorder/example/index.html)
+Full example [example/index.html](https://github.com/asrul10/mic-speaker-recorder/blob/main/example/index.html)
 
 ```JS
 const $audio = $("audio");
