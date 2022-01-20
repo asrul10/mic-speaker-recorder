@@ -116,6 +116,7 @@ export default class MicSpeakerRecorder {
           this.callbackStreamStop(this.recorder.getBlob());
           this.recorder.destroy();
           this.recorder = null;
+          this.stop();
         });
       }
       isExecuted = true;
@@ -179,5 +180,6 @@ export default class MicSpeakerRecorder {
     this.mediaStream.stop();
     this.mediaStreamMic.stop();
     this.mediaStream = null;
+    this.mediaStreamMic = null;
   }
 }
